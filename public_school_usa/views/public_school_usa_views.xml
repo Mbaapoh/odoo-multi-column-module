@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="public_school_usa_form">
+            <field name="name">List of Public Schools in USA</field>
+            <field name="model">public.school_usa</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="school_name"/>
+                            <field name="state_name"/>
+                            <field name="state_abbr"/>
+                            <field name="school_type"/>
+                            <field name="pupil_teacher_ratio"/>
+                            <field name="web_site_url"/>
+                            <field name="title1_eligible_schools"/>
+                            <field name="grade9_offered"/>
+                            <field name="grade10_offered"/>
+                            <field name="grade11_offered"/>
+                            <field name="grade12_offered"/>
+                            <field name="free_lunch_eligible"/>
+                            <field name="grade9_student"/>
+                            <field name="grade10_student"/>
+                            <field name="grade11_student"/>
+                            <field name="grade12_student"/>
+                            <field name="phone_number"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="public_school_usa_tree">
+            <field name="name">List of Public Schools in USA</field>
+            <field name="model">public.school_usa</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="school_name"/>
+                    <field name="state_name"/>
+                    <field name="state_abbr"/>
+                    <field name="school_type"/>
+                    <field name="pupil_teacher_ratio"/>
+                    <field name="web_site_url"/>
+                    <field name="title1_eligible_schools"/>
+                    <field name="grade9_offered"/>
+                    <field name="grade10_offered"/>
+                    <field name="grade11_offered"/>
+                    <field name="grade12_offered"/>
+                    <field name="free_lunch_eligible"/>
+                    <field name="grade9_student"/>
+                    <field name="grade10_student"/>
+                    <field name="grade11_student"/>
+                    <field name="grade12_student"/>
+                    <field name="phone_number"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="public_school_usa_action_window">
+            <field name="name">Public School USA Window</field>
+            <field name="res_model">public.school_usa</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="public_school_usa.action_server">
+              <field name="name">public_school_usa server</field>
+              <field name="model_id" ref="model_public_school_usa_public_school_usa"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="Public School USA" id="public_school_usa_menu_root" action="public_school_usa_action_window"/>
+
+        <!-- menu categories -->
+        <!--
+            <menuitem name="Menu 1" id="public_school_usa.menu_1" parent="public_school_usa.menu_root"/>
+            <menuitem name="Menu 2" id="public_school_usa.menu_2" parent="public_school_usa.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+            <menuitem name="List" id="public_school_usa.menu_1_list" parent="public_school_usa.menu_1"
+                      action="public_school_usa.action_window"/>
+            <menuitem name="Server to list" id="public_school_usa" parent="public_school_usa.menu_2"
+                      action="public_school_usa.action_server"/>
+        -->
+    </data>
+</odoo>
